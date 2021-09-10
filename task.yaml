@@ -1,4 +1,4 @@
--
+---
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
@@ -7,7 +7,6 @@ spec:
   steps:
     - name: retrieve-yaml
       image: quay.io/ibmgaragecloud/alpine-curl
-      image:
       script: |
         mkdir k8s
         wget 'https://raw.githubusercontent.com/tektoncd/pipeline/main/examples/v1beta1/taskruns/run-steps-as-non-root.yaml' -O "k8s/run-steps-as-non-root.yaml"
@@ -19,3 +18,4 @@ spec:
       image: quay.io/ibmgaragecloud/alpine-curl
     script: |
         sed 's/image: ubuntu/image: quay.io\/ibmgaragecloud\/alpine-curl/g' k8s/run-steps-as-non-root-task-only.yaml > "k8s/run-steps-as-non-root-alpine-task.yaml"
+        

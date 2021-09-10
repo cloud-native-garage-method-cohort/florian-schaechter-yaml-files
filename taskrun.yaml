@@ -1,3 +1,4 @@
+---
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
@@ -12,6 +13,5 @@ spec:
       value: https://github.com/upslopeio/ibm-cloud-garage-training/issues/9
     - name: COMMENT
       value: |
-          good work! 
-spec:
-  taskRef
+          good work!
+
