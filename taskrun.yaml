@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: tekton-catalog-assignment-add-git-comment
+  name: _!
+spec:
+  taskRef:
+    kind: CatalogTask
+    name: github-add-comment
+  param:
+    - name: REQUEST_URL
+      value: https://github.com/upslopeio/ibm-cloud-garage-training/issues/9
+    - name: COMMENT
+      value: |
+          good work! 
+spec:
+  taskRef
